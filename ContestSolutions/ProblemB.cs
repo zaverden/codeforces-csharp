@@ -9,14 +9,16 @@ namespace ContestSolutions
     {
         static void Main(string[] args)
         {
-            int i = ReadInt();
-            var result = Solve(i);
-            WriteYesNo(result);
+            int n = ReadInt();
+            int[] a = ReadInts();
+            var result = Solve(n, a);
+            Console.WriteLine(result);
         }
 
-        public static bool Solve(int n)
+        public static string Solve(int n, int[] a)
         {
-            return true;
+            int addCount = a.Count(i => i % 2 == 1);
+            return (addCount > 0) ? "First" : "Second";
         }
 
         #region helpers

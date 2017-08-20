@@ -6,14 +6,24 @@ namespace Tests
     [TestClass]
     public class ProblemB_Tests
     {
-        //[TestMethod]
-        //public void Case01()
-        //{
-        //    var res = Problem.Solve(4);
-        //    Assert.IsTrue(res);
-        //}
-        //[TestMethod] public void Case02() { }
-        //[TestMethod] public void Case03() { }
+        [TestMethod]
+        public void Case01()
+        {
+            var res = Problem.Solve(4, new int[] { 1, 3, 2, 3 });
+            Assert.AreEqual("First", res);
+        }
+        [TestMethod]
+        public void Case02()
+        {
+            var res = Problem.Solve(2, new int[] { 2, 2 });
+            Assert.AreEqual("Second", res);
+        }
+        [TestMethod]
+        public void Case03()
+        {
+            var res = Problem.Solve(4, new int[] { 1, 1, 1, 1 });
+            Assert.AreEqual("First", res);
+        }
         //[TestMethod] public void Case04() { }
         //[TestMethod] public void Case05() { }
         //[TestMethod] public void Case06() { }
