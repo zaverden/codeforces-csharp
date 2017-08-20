@@ -9,10 +9,15 @@ namespace Tests
         [TestMethod]
         public void Case01()
         {
-            var res = Problem.Solve(4);
+            var res = Problem.Solve(4, 2, "aabb");
             Assert.IsTrue(res);
         }
-        //[TestMethod] public void Case02() { }
+        [TestMethod]
+        public void Case02()
+        {
+            var res = Problem.Solve(6, 3, "aacaab");
+            Assert.IsFalse(res);
+        }
         //[TestMethod] public void Case03() { }
         //[TestMethod] public void Case04() { }
         //[TestMethod] public void Case05() { }

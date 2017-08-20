@@ -9,14 +9,19 @@ namespace ContestSolutions
     {
         static void Main(string[] args)
         {
-            int i = ReadInt();
-            var result = Solve(i);
+            int n, k;
+            ReadInts(out n, out k);
+            string line = Console.ReadLine();
+            var result = Solve(n, k, line);
             WriteYesNo(result);
         }
 
-        public static bool Solve(int n)
+        public static bool Solve(int n, int k, string s)
         {
-            return true;
+            int maxColorAmount = s.GroupBy(ch => ch)
+                .Select(gr => gr.Count())
+                .Max();
+            return k >= maxColorAmount;
         }
 
         #region helpers
