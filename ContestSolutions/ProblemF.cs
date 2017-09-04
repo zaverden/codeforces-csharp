@@ -9,8 +9,8 @@ namespace ContestSolutions
     {
         static void Main(string[] args)
         {
-            int i = ReadInt();
-            var result = Solve(i);
+            int n = ReadInt();
+            var result = Solve(n);
             WriteYesNo(result);
         }
 
