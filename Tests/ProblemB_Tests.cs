@@ -6,12 +6,12 @@ namespace Tests
     [TestClass]
     public class ProblemB_Tests
     {
-        [TestMethod]
-        public void CaseB01()
-        {
-            var res = Problem.Solve(4);
-            Assert.IsTrue(res);
-        }
+        //[TestMethod]
+        //public void CaseB01()
+        //{
+        //    var res = Problem.Solve(4);
+        //    Assert.IsTrue(res);
+        //}
         //[TestMethod] public void CaseB02() { }
         //[TestMethod] public void CaseB03() { }
         //[TestMethod] public void CaseB04() { }

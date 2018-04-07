@@ -9,17 +9,56 @@ namespace Tests
         [TestMethod]
         public void CaseA01()
         {
-            var res = Problem.Solve(4);
-            Assert.IsTrue(res);
+            var res = Problem.Solve(1, "CS");
+            Assert.AreEqual(res, 1);
         }
-        //[TestMethod] public void CaseA02() { }
-        //[TestMethod] public void CaseA03() { }
-        //[TestMethod] public void CaseA04() { }
-        //[TestMethod] public void CaseA05() { }
-        //[TestMethod] public void CaseA06() { }
-        //[TestMethod] public void CaseA07() { }
-        //[TestMethod] public void CaseA08() { }
-        //[TestMethod] public void CaseA09() { }
+        [TestMethod]
+        public void CaseA02()
+        {
+            var res = Problem.Solve(2, "CS");
+            Assert.AreEqual(res, 0);
+        }
+        [TestMethod]
+        public void CaseA03()
+        {
+            var res = Problem.Solve(1, "SS");
+            Assert.IsNull(res);
+        }
+        [TestMethod]
+        public void CaseA04()
+        {
+            var res = Problem.Solve(6, "SCCSSC");
+            Assert.AreEqual(res, 2);
+        }
+        [TestMethod]
+        public void CaseA05()
+        {
+            var res = Problem.Solve(2, "CC");
+            Assert.AreEqual(res, 0);
+        }
+        [TestMethod]
+        public void CaseA06()
+        {
+            var res = Problem.Solve(3, "CSCSS");
+            Assert.AreEqual(res, 5);
+        }
+        [TestMethod]
+        public void CaseA07()
+        {
+            var res = Problem.Solve(1, "SSSCCC");
+            Assert.IsNull(res);
+        }
+        [TestMethod]
+        public void CaseA08()
+        {
+            var res = Problem.Solve(1, "CCCS");
+            Assert.AreEqual(res, 3);
+        }
+        [TestMethod] public void CaseA09()
+        {
+            var res = Problem.Solve(2, "CCCS");
+            Assert.AreEqual(res, 2);
+        }
         //[TestMethod] public void CaseA10() { }
         //[TestMethod] public void CaseA11() { }
         //[TestMethod] public void CaseA12() { }

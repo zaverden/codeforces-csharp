@@ -1,22 +1,77 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ContestSolutions
 {
     public static class ProblemA
     {
+        private
+
         static void Main(string[] args)
         {
-            int n = ReadInt();
-            var result = Solve(n);
-            WriteYesNo(result);
+            int t = ReadInt();
+            for (int i = 1; i <= t; i++)
+            {
+                var parts = Console.ReadLine().Split(' ');
+                int? result = Solve(int.Parse(parts[0]), parts[1]);
+                Console.WriteLine("Case #{0}: {1}", i, result == null ? "IMPOSSIBLE" : result.ToString());
+            }
         }
 
-        public static bool Solve(int n)
+        public static int? Solve(int d, string progStr)
         {
-            return true;
+            char[] prog = progStr.ToArray();
+
+            //do nothing and path
+            if (d >= CalcDamage(prog)) return 0;
+
+            //can't do anything
+            if (progStr.IndexOf('C') < 0) return null;
+
+            int i = 0;
+            while (ReduceDmg(prog))
+            {
+                i++;
+                if (d >= CalcDamage(prog)) return i;
+            }
+            return null;
+        }
+
+        public static int CalcDamage(char[] prog)
+        {
+            int total = 0;
+            int curr = 1;
+            foreach (char instruction in prog)
+            {
+                switch (instruction)
+                {
+                    case 'C':
+                        curr *= 2;
+                        break;
+                    case 'S':
+                        total += curr;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return total;
+        }
+
+        public static bool ReduceDmg(char[] prog)
+        {
+            for (int i = prog.Length - 1; i > 0; i--)
+            {
+                if (prog[i] == 'S' && prog[i - 1] == 'C')
+                {
+                    prog[i] = 'C';
+                    prog[i - 1] = 'S';
+                    return true;
+                }
+            }
+
+            return false; // run to first - no replaces
         }
 
         #region helpers
