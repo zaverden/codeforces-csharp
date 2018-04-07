@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Problem = ContestSolutions.ProblemB;
 
 namespace Tests
@@ -6,18 +7,49 @@ namespace Tests
     [TestClass]
     public class ProblemB_Tests
     {
-        //[TestMethod]
-        //public void CaseB01()
-        //{
-        //    var res = Problem.Solve(4);
-        //    Assert.IsTrue(res);
-        //}
-        //[TestMethod] public void CaseB02() { }
-        //[TestMethod] public void CaseB03() { }
-        //[TestMethod] public void CaseB04() { }
-        //[TestMethod] public void CaseB05() { }
-        //[TestMethod] public void CaseB06() { }
-        //[TestMethod] public void CaseB07() { }
+        [TestMethod]
+        public void CaseB01()
+        {
+            var res = Problem.Solve("5 6 8 4 3".ToInts());
+            Assert.IsNull(res);
+        }
+        [TestMethod]
+        public void CaseB02()
+        {
+            var res = Problem.Solve("8 9 7".ToInts());
+            Assert.AreEqual(1, res);
+        }
+        [TestMethod]
+        public void CaseB03()
+        {
+            var res = Problem.Solve("5 6 1 2".ToInts());
+            Assert.IsNull(res);
+        }
+        [TestMethod]
+        public void CaseB04()
+        {
+            var res = Problem.Solve("6 5 1 2".ToInts());
+            Assert.AreEqual(2, res);
+        }
+        [TestMethod]
+        public void CaseB05()
+        {
+            var res = Problem.Solve("8 9 7 1 2".ToInts());
+            Assert.AreEqual(0, res);
+        }
+        [TestMethod]
+        public void CaseB06()
+        {
+            var res = Problem.Solve("8 9 7 2 2".ToInts());
+            Assert.AreEqual(3, res);
+        }
+        [TestMethod]
+        public void CaseB07()
+        {
+            int[] ints = Enumerable.Range(1, 1000001).Reverse().ToArray();
+            var res = Problem.Solve(ints);
+            Assert.IsNull(res);
+        }
         //[TestMethod] public void CaseB08() { }
         //[TestMethod] public void CaseB09() { }
         //[TestMethod] public void CaseB10() { }
